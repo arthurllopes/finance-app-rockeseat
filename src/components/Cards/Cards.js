@@ -1,15 +1,21 @@
 import React from 'react'
 import { Card } from './style'
 
-const Cards = ({type, value, src, alt, className}) => {
+const Cards = ({type, value, src, alt, className, total}) => {
     return (
-        <Card className={className}>
+        <Card className={className} total={total}>
             <header>
                 <p>{type}</p>
                 <img src={src} alt={alt} />
             </header>
             <div>
-                <strong>R$: {value}</strong>
+                <strong>
+                    {type === 'Saida' && '- '}
+                    {new Intl.NumberFormat('pt-br',
+                    {style: 'currency',
+                    currency: 'BRL'})
+                    .format(value)}
+                </strong>
             </div>
         </Card>
     )

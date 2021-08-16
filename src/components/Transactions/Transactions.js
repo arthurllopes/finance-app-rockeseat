@@ -1,12 +1,9 @@
 import React from 'react'
-import { api } from '../dataService/api'
+import { useTransactions } from '../../hooks/useTransactionsContext'
 import { Container } from './style'
 
 const Transactions = () => {
-    React.useEffect (() => {
-        api.get('/transactions')
-        .then(response => console.log(response.data))
-    }, [])
+    const { transactions } = useTransactions()
     return (
         <Container>
             <table>
@@ -19,12 +16,17 @@ const Transactions = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Desenvolvimento</td>
-                        <td>12.000</td>
-                        <td>devops</td>
-                        <td>20/20/2021</td>
-                    </tr>
+                    {transactions.map((transaction) => (
+                        <tr key={transaction.id}>
+                            <td>{transaction.title}</td>
+                            <td className={transaction.type}>{new Intl.NumberFormat('pt-br', {
+                                style: 'currency',
+                                currency: 'BRL'
+                            }).format(transaction.price)}</td>
+                            <td>{transaction.category}</td>
+                            <td>{new Intl.DateTimeFormat('pt-br').format(new Date(transaction.date))}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </Container>

@@ -21,7 +21,7 @@ export const Card = styled.div`
         line-height: 3rem;  
     }
     &.diffBackground{
-        background-color: var(--green);
+        background-color: ${({total}) => total >= 0 ? 'var(--green)' : 'var(--red)'};
         color: white;
     }
 `
