@@ -6,9 +6,8 @@ Nesse projeto faço uso da ContextAPI e Styled Components. Utilizo o serviço da
 ## Projeto 
  - É possível cadastrar, excluir transações, ver os saldos de entrada e saída. Além disso, é possível ver o histórico de transação.
 
-<p align="center">
  ![finance-app-rocketseat](https://user-images.githubusercontent.com/82395681/129505003-d43c095e-893b-4091-8dbc-f22d9f6fa5f0.png)  
-</p>
+
 
 ## 💻 Tecnologias
  - [React](https://pt-br.reactjs.org/)
