@@ -17,7 +17,7 @@ Nesse projeto faço uso da ContextAPI e Styled Components. Utilizo o serviço da
 
 ## Instalação e uso
 
-`
+``
 # Abra um terminal e copie este repositório com o comando
 git clone https://github.com/arthurllopes/finance-app-rockeseat.git
 # ou use a opção de download.
@@ -30,7 +30,7 @@ npm install
 
 # Rode a aplicação
 npm start
-`
+``
 <br>
 
 Feito por Arthur Lopes 👋🏽 Entre em contato!
